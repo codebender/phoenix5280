@@ -23,9 +23,9 @@ http://www.amazon.com/gp/product/B00MLP3JMS)
 https://www.sdcard.org/downloads/formatter_4/)
 1. [Download Raspbian Image](http://downloads.raspberrypi.org/raspbian_latest)
 1. Load Raspbian Image onto Micro SD Card
-  * Identify the disk with ```diskutil list```
-  * Unmount the disk with ```diskutil unmountDisk /dev/<disk# from diskutil>```
-  * Load Image onto SD Card with ```sudo dd bs=1m if=<path/to/2015-02-16-raspbian-wheezy.img> of=/dev/<disk# from diskutil>```
+    * Identify the disk with ```diskutil list```
+    * Unmount the disk with ```diskutil unmountDisk /dev/<disk# from diskutil>```
+    * Load Image onto SD Card with ```sudo dd bs=1m if=<path/to/2015-02-16-raspbian-wheezy.img> of=/dev/<disk# from diskutil>```
 1. Plug in the equipment, but power cable last!!
 1. Hopefully it all boots up... If not [http://www.raspberrypi.org/help/](
 http://www.raspberrypi.org/help/)
@@ -33,15 +33,15 @@ http://www.raspberrypi.org/help/)
 
 ### First Things to do
 1. raspi-config - ```sudo raspi-config```
-  * Expand File System
-  * Select suitable locale and keyboard
-  * CHANGE USER PASSWORD :-)
+    * Expand File System
+    * Select suitable locale and keyboard
+    * CHANGE USER PASSWORD :-)
 1. [Setup Wifi!!](http://www.howtogeek.com/167425/how-to-setup-wi-fi-on-your-raspberry-pi-via-the-command-line/)
 1. Touch up the screen resolution to fit your monitor, [see this](http://weblogs.asp.net/bleroy/getting-your-raspberry-pi-to-output-the-right-resolution)
 1. Update & Upgrade
-  * ```sudo apt-get update```
-  * ```sudo apt-get disto-upgrade```
-  * ```sudo rpi-update```
+    * ```sudo apt-get update```
+    * ```sudo apt-get disto-upgrade```
+    * ```sudo rpi-update```
 1. [Set Raspberry Pi's IP to be static](
 http://elinux.org/RPi_Setting_up_a_static_IP_in_Debian)
 1. Enable SSH-ing - ```sudo raspi-config``` -> Advanced Options -> SSH
@@ -50,10 +50,10 @@ http://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md)
 
 ### A few more things...
 1. Install Ruby with rbenv
-  * [Install rbenv](https://github.com/sstephenson/rbenv#installation)
-  * [Add ruby-build plugin](https://github.com/sstephenson/ruby-build#installing-as-an-rbenv-plugin-recommended)
-  * Install a ruby version, for example ```rbenv install 2.2.1```
-  * rehash rbenv ```rbenv rehash```
+    * [Install rbenv](https://github.com/sstephenson/rbenv#installation)
+    * [Add ruby-build plugin](https://github.com/sstephenson/ruby-build#installing-as-an-rbenv-plugin-recommended)
+    * Install a ruby version, for example ```rbenv install 2.2.1```
+    * rehash rbenv ```rbenv rehash```
 1. Install Node
   * sudo apt-get nodejs
 
