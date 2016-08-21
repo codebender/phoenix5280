@@ -1,7 +1,6 @@
 ---
-:author: 'Matthew Bender'
-:title:  'Fitbit Device Integration'
-:created_at: '2015-01-09'
+title: Fitbit Device Integration
+created_at: 2015-01-09
 ---
 
 ### Fitbit and health device data

@@ -1,7 +1,6 @@
 ---
-:author: 'Matthew Bender'
-:title:  'Setting up my very first Raspberry Pi!'
-:created_at: '2015-03-08'
+title: Setting up my very first Raspberry Pi!
+created_at: 2015-03-08
 ---
 
 ### The Equipment

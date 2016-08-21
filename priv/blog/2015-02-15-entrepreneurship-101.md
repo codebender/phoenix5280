@@ -1,7 +1,6 @@
 ---
-:author: 'Matthew Bender'
-:title:  'Entrepreneurship can be learned'
-:created_at: '2015-02-15'
+title: Entrepreneurship can be learned
+created_at: 2015-02-15
 ---
 
 ### I do what I want!

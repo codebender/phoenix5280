@@ -1,7 +1,6 @@
 ---
-:author: 'Matthew Bender'
-:title:  'Yet Another Tech Blog'
-:created_at: '2015-01-01'
+title: Yet Another Tech Blog
+created_at: 2015-01-01
 ---
 
 ### Starting Again
