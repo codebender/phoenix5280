@@ -11,7 +11,7 @@ defmodule Phoenix5280 do
       # Start the endpoint when the application starts
       supervisor(Phoenix5280.Endpoint, []),
       # Start your own worker by calling: Phoenix5280.Worker.start_link(arg1, arg2, arg3)
-      # worker(Phoenix5280.Worker, [arg1, arg2, arg3]),
+      worker(Phoenix5280.Blog, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
