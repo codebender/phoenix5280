@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="5280code.com">
+    <meta name="author" content="Matthew Bender">
 
-    <title>Hello Phoenix5280!</title>
+    <title>5280 Code - Matthew Bender</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -15,11 +15,23 @@
     <div class="container">
       <header class="header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+          <ul class="nav nav-pills navbar-right">
+            <li>
+            <a target="_blank" href="https://github.com/codebender"><i class="fa fa-medium-size fa-github-square"></i>
+            </a></li>
+            <li>
+            <a target="_blank" href="https://twitter.com/5280code"><i class="fa fa-medium-size fa-twitter-square"></i>
+            </a></li>
+            <li>
+            <a target="_blank" href="http://www.linkedin.com/in/matthewkbender"><i class="fa fa-medium-size fa-linkedin-square"></i>
+            </a></li>
+            <li>
+            <a target="_blank" href="http://instagram.com/bendo"><i class="fa fa-medium-size fa-instagram"></i>
+            </a></li>
           </ul>
         </nav>
-        <span class="logo"></span>
+        <a href="<%= page_path(@conn, :index) %>" class="logo"></a>
+        <span class="header-title">5280 CODE</span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
