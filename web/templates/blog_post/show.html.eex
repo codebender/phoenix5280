@@ -1,6 +1,21 @@
 <p><a href="<%= page_path(@conn, :index) %>">&laquo; Back</a></a>
 <article>
-  <h1><%= @post.title %></h1>
-  <p><%= @post.created_at |> Calendar.Strftime.strftime!("%B %e, %Y") %></p>
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object img-circle avatar" src="/images/avatar.png" alt="avatar">
+      </a>
+    </div>
+    <div class="media-body">
+      <h1><%= @post.title %></h1>
+      <p class="lead">By Matthew Bender</p>
+      <hr />
+      <p>
+        <i class="fa fa-calendar"></i>
+        Posted on <%= @post.created_at |> Calendar.Strftime.strftime!("%B %e, %Y") %>
+      </p>
+    </div>
+  </div>
+  <hr />
   <%= raw(@post.content) %>
 </article>

@@ -13,6 +13,9 @@ body, form, ul, table {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+body {
+  font-family: 'Avenir Next'
+}
 
 /* Phoenix flash messages */
 .alert:empty { display: none; }
@@ -35,7 +38,6 @@ form.link, form.button {
   background-size: 71px 71px;
 }
 .header-title {
-  font-family: Avenir Next;
   font-size: 48px;
   font-weight: bold;
   line-height: 71px;
@@ -43,36 +45,33 @@ form.link, form.button {
 .fa-medium-size {
   font-size: 2em;
 }
-.nav a {
+a {
+  color: #000;
+}
+a:hover {
   color: #000;
 }
 
+/* Home */
+.blog-posts-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+.blog-post-summary {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Blog Post */
+.avatar {
+  height: 180px;
+  width: 180px;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing {
+.header {
   padding-right: 15px;
   padding-left: 15px;
-}
-
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-}
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 35px 0;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -86,9 +85,5 @@ form.link, form.button {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
