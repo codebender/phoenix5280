@@ -1,6 +1,7 @@
 ---
 title: Entrepreneurship can be learned
 created_at: 2015-02-15
+intro: Most of us want to be our own bosses eventually, right? But how does one become an entrepreneur, especially as an engineer?
 ---
 
 ### I do what I want!

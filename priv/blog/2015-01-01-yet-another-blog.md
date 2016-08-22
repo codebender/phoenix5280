@@ -1,13 +1,14 @@
 ---
 title: Yet Another Tech Blog
 created_at: 2015-01-01
+intro: I'm going to start blogging again about Tech N' Stuff here!
 ---
 
 ### Starting Again
 I'm going to start blogging again about Tech N' Stuff.  I used to write blogs
 very sporadically on [BentSolutions.com](http://www.bentsolutions.com/blog) but
 now I really want to start blogging more consistently. Perhaps as often as once
-a week...(findgers crossed)
+a week...(fingers crossed)
 
 
 ### Who is the developer Matthew Bender?

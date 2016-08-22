@@ -1,5 +1,5 @@
 defmodule Phoenix5280.BlogPost do
-  defstruct slug: "", title: "", created_at: "", content: ""
+  defstruct slug: "", title: "", intro: "", created_at: "", content: ""
 
   alias Phoenix5280.Blog
 
@@ -33,6 +33,7 @@ defmodule Phoenix5280.BlogPost do
   defp extract({props, content}, post) do
     %{post |
       title: get_prop(props, "title"),
+      intro: get_prop(props, "intro"),
       created_at: get_prop(props, "created_at") |> Calendar.Date.Parse.iso8601!,
       content: content}
   end

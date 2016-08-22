@@ -1,6 +1,7 @@
 ---
 title: Setting up my very first Raspberry Pi!
 created_at: 2015-03-08
+intro: A step by step guide for setting up a Raspberry Pi 2
 ---
 
 ### The Equipment

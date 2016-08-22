@@ -10,6 +10,9 @@
           <i class="fa fa-calendar"></i>
           Posted on <%= blog_post.created_at |> Calendar.Strftime.strftime!("%B %e, %Y") %>
         </p>
+        <p>
+          <%= blog_post.intro %>
+        </p>
       </article>
       <hr />
     <% end %>

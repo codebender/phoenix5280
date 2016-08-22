@@ -1,6 +1,7 @@
 ---
 title: Fitbit Device Integration
 created_at: 2015-01-09
+intro: I have an innate passion for health devices and data. Here is my Ruby on Rails / AngularJS 1.x integration.
 ---
 
 ### Fitbit and health device data
