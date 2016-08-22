@@ -1,0 +1,6 @@
+<p><a href="<%= page_path(@conn, :index) %>">&laquo; Back</a></a>
+<article>
+  <h1><%= @post.title %></h1>
+  <p><%= @post.created_at |> Calendar.Strftime.strftime!("%B %e, %Y") %></p>
+  <%= raw(@post.content) %>
+</article>

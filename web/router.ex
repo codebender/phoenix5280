@@ -9,18 +9,11 @@ defmodule Phoenix5280.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", Phoenix5280 do
     pipe_through :browser # Use the default browser stack
 
+    get "/blog_posts/:slug", BlogPostController, :show
+
     get "/", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Phoenix5280 do
-  #   pipe_through :api
-  # end
 end
