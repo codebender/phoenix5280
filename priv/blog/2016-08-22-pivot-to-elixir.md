@@ -22,7 +22,7 @@ as painless as Airbnb has made renting a complete stranger's home.
 Back when Elixir was pre-1.0, I was always intrigued to see what it would
 become and how the community would grow or fail.  It not only grew but exploded
 in the past years. Many developers are pivoting from a number of languages and
-diving head first into Elixir-land. Large respected companies like Thoughtbot
+diving head first into Elixir-land. Even respected companies like Thoughtbot
 have even become [evangelists for the language](https://robots.thoughtbot.com/how-we-replaced-react-with-phoenix).
 
 I never really dipped more than a toe into reading and learning, until I joined
