@@ -74,6 +74,15 @@ a:hover {
   padding-left: 15px;
 }
 
+/* Badges */
+.badge-name {
+  height: 100px;
+}
+
+.badge-description {
+  font-weight: normal;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

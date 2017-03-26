@@ -34,7 +34,7 @@ defmodule Phoenix5280.BlogPost do
     %{post |
       title: get_prop(props, "title"),
       intro: get_prop(props, "intro"),
-      created_at: get_prop(props, "created_at") |> Calendar.Date.Parse.iso8601!,
+      created_at: get_prop(props, "created_at") |> Date.from_iso8601!,
       content: content}
   end
 
