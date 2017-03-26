@@ -22,7 +22,7 @@ defmodule Phoenix5280.BlogPost do
 
   defp split(data) do
     [frontmatter, markdown] = String.split(data, ~r/\n-{3,}\n/, parts: 2)
-    {parse_yaml(frontmatter), Earmark.to_html(markdown)}
+    {parse_yaml(frontmatter), Earmark.as_html!(markdown)}
   end
 
   defp parse_yaml(yaml) do
