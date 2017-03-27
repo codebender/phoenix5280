@@ -18,7 +18,7 @@ defmodule Phoenix5280.Mixfile do
   def application do
     [mod: {Phoenix5280, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger,
-      :gettext, :calendar, :yamerl]]
+      :gettext, :calendar, :yamerl, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -35,8 +35,10 @@ defmodule Phoenix5280.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:earmark, "~> 1.0"},
+     {:earmark, "~> 1.2"},
      {:calendar, "~> 0.16.0"},
-     {:yamerl, github: "yakaz/yamerl"}]
+     {:yamerl, "~> 0.4.0"},
+     {:httpoison, "~> 0.10.0"},
+     {:number, "~> 0.5.0"}]
   end
 end

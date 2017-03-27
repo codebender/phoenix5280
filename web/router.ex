@@ -13,6 +13,7 @@ defmodule Phoenix5280.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/blog_posts/:slug", BlogPostController, :show
+    get "/fitbit", FitbitController, :show
 
     get "/", PageController, :index
   end

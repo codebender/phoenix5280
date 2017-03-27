@@ -67,11 +67,23 @@ a:hover {
   height: 180px;
   width: 180px;
 }
+article a {
+  text-decoration: underline;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+/* Badges */
+.badge-name {
+  height: 100px;
+}
+
+.badge-description {
+  font-weight: normal;
 }
 
 /* Responsive: Portrait tablets and up */

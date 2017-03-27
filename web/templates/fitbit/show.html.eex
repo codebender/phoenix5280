@@ -1,0 +1,49 @@
+<p><a href="<%= page_path(@conn, :index) %>">&laquo; Back</a></a>
+<h1>Fitbit Stats</h1>
+
+<h2>Lifetime</h2>
+<div class="row">
+  <div class="col-md-10 col-sm-8 col-xs-12">
+    <p class="lead">Member since: <%= @user.member_since %></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10 col-sm-10 col-md-10">
+    <h3>Total Amount</h3>
+    <h4>Steps: <%= @lifetime.total_steps %></h4>
+    <h4>Distance: <%= @lifetime.total_distance %> mi</h4>
+    <h4>Floors: <%= @lifetime.total_floors %></h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-10 col-sm-10 col-md-10">
+    <h3>Best Day</h3>
+    <h4>Steps: <%= @lifetime.best_steps %> on <%= @lifetime.best_steps_date %></h4>
+    <h4>Distance: <%= @lifetime.best_distance %> mi on <%= @lifetime.best_distance_date %></h4>
+    <h4>Floors: <%= @lifetime.best_floors %> on <%= @lifetime.best_floors_date %></h4>
+  </div>
+</div>
+
+
+<hr />
+<h2>Badges</h2>
+
+<%= for {category, category_badges} <- @badges do %>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10">
+      <h3> <%= category %> </h3>
+      <div class="row">
+        <%= for badge <- category_badges do %>
+          <div class="col-md-3 col-sm-4 col-xs-4">
+            <img class="center-block img-responsive" src="<%= badge.image_url %>"></img>
+            <div class="text-center badge-name">
+              <h5><%= badge.name %><p class="badge-description">(<%= badge.description %>)</p></h5>
+            </div>
+          </div>
+        <% end %>
+        <div class="clearfix"></div>
+        <hr />
+      </div>
+    </div>
+  </div>
+<% end %>
