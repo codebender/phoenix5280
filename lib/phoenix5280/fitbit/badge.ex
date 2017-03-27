@@ -14,7 +14,6 @@ defmodule Phoenix5280.Fitbit.Badge do
   def all(user_token) do
     case Fitbit.user_request(:get, "badges", user_token) do
       {:ok, body} ->
-        IO.inspect body["badges"]
         body["badges"] |> parse_badges
       error ->
         error

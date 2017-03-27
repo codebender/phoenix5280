@@ -4,7 +4,7 @@ defmodule Phoenix5280.Mixfile do
   def project do
     [app: :phoenix5280,
      version: "0.0.1",
-     elixir: "~> 1.3",
+     elixir: "~> 1.4",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -29,16 +29,16 @@ defmodule Phoenix5280.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.2.1"},
+    [{:phoenix, "~> 1.2.2"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"},
+     {:gettext, "~> 0.13"},
+     {:cowboy, "~> 1.1"},
      {:earmark, "~> 1.2"},
-     {:calendar, "~> 0.16.0"},
+     {:calendar, "~> 0.17"},
      {:yamerl, "~> 0.4.0"},
-     {:httpoison, "~> 0.10.0"},
-     {:number, "~> 0.5.0"}]
+     {:httpoison, "~> 0.11.1"},
+     {:number, "~> 0.5.1"}]
   end
 end

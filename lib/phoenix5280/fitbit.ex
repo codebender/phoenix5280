@@ -36,20 +36,20 @@ defmodule Phoenix5280.Fitbit do
   Set our request headers for every request.
   """
   def request_headers(auth_type, token) do
-    headers = HashDict.new
+    headers = Map.new
 
     headers = case auth_type do
       :token ->
-        headers |> Dict.put("Authorization", "Bearer #{token}")
+        headers |> Map.put("Authorization", "Bearer #{token}")
       :basic_auth ->
-        headers |> Dict.put("Authorization", "Basic #{basic_auth}")
+        headers |> Map.put("Authorization", "Basic #{basic_auth()}")
     end
 
     headers
-    |> Dict.put("User-Agent",    "Fitbit/v1 fitbit-elixir/0.0.1")
-    |> Dict.put("Content-Type",  "application/x-www-form-urlencoded")
-    |> Dict.put("Accept-Language",  "en_US")
-    |> Dict.to_list
+    |> Map.put("User-Agent",    "Fitbit/v1 fitbit-elixir/0.0.1")
+    |> Map.put("Content-Type",  "application/x-www-form-urlencoded")
+    |> Map.put("Accept-Language",  "en_US")
+    |> Map.to_list
   end
 
   def user_request(method, endpoint, token \\ "", body \\ "") do
@@ -125,6 +125,6 @@ defmodule Phoenix5280.Fitbit do
   end
 
   defp basic_auth do
-    Base.encode64("#{client_id}:#{client_secret}")
+    Base.encode64("#{client_id()}:#{client_secret()}")
   end
 end
