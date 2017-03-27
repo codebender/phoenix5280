@@ -67,7 +67,7 @@ a:hover {
   height: 180px;
   width: 180px;
 }
-article a {
+.blog-post a {
   text-decoration: underline;
 }
 
