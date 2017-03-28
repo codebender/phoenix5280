@@ -26,8 +26,7 @@ and it is going great.  MITx does an incredible job.  They provide a series of
 short videos and bring in past MIT alumni with real life examples of the course
 concepts. Enroll today if you want to get the process started in becoming your
 own boss or if you want to fund your side projects or BOTH. I do plan on
-enrolling in [Entrepreneurship 102](
-https://www.edx.org/course/entrepreneurship-102-what-can-you-do-mitx-15-390-2x)
+enrolling in [Entrepreneurship 102](https://www.edx.org/course/entrepreneurship-102-what-can-you-do-mitx-15-390-2x)
 after I complete 101.
 
 ### Questions or Comments?
