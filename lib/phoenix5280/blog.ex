@@ -18,7 +18,7 @@ defmodule Phoenix5280.Blog do
   end
 
   def init(:ok) do
-    posts = crawl
+    posts = crawl()
     {:ok, posts}
   end
 
@@ -38,7 +38,8 @@ defmodule Phoenix5280.Blog do
   end
 
   defp crawl do
-    File.ls!(blog_directory)
+    blog_directory()
+    |> File.ls!
     |> Enum.map(&BlogPost.compile/1)
     |> Enum.sort(&sort/2)
   end

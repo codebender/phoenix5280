@@ -107,7 +107,7 @@ defmodule Phoenix5280.Fitbit do
   end
 
   @doc """
-  Gets the API key from :kraken, :fitbit, :client_secret application env or ENV
+  Gets the API key from :fitbit, :client_secret application env or ENV
   Returns binary
   """
   def client_secret do
@@ -116,7 +116,7 @@ defmodule Phoenix5280.Fitbit do
   end
 
   @doc """
-  Gets the API key from :kraken, :fitbit, :token application env or ENV
+  Gets the API key from :fitbit, :token application env or ENV
   Returns binary
   """
   def token do
