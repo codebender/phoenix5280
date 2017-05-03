@@ -6,6 +6,12 @@ intro: Integrating with Fitbit's API in Elixir. I've done it many times in ruby,
 
 ![Fitbit](https://s2.q4cdn.com/857130097/files/doc_downloads/Alta/Product/Fitbit-Family.jpg){:height="450px" width="100%"}
 
+
+
+#### TL;DR - [My Fitbit Stats Page](http://www.5280code.com/fitbit)
+
+
+
 ## The MVP
 In the past, I've integrated with Fitbit using Ruby to show my daily stats like
 number of steps and even hours of sleep. It made sense to replicate what I've
