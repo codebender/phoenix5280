@@ -1,9 +1,9 @@
-defmodule Web5280.Blog do
+defmodule Blog5280.Blog do
   use GenServer
 
-  alias Web5280.BlogPost
+  alias Blog5280.BlogPost
 
-  @blog_directory "apps/web5280/priv/blog"
+  @blog_directory "apps/blog5280/priv/blog"
 
   def start_link do
     GenServer.start_link(__MODULE__, :ok, [name: __MODULE__])
@@ -45,6 +45,6 @@ defmodule Web5280.Blog do
   end
 
   defp sort(a, b) do
-    Calendar.Date.diff(a.created_at, b.created_at) > 0
+    Date.compare(a.created_at, b.created_at) == :gt
   end
 end

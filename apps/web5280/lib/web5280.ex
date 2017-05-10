@@ -11,7 +11,6 @@ defmodule Web5280 do
       # Start the endpoint when the application starts
       supervisor(Web5280.Endpoint, []),
       # Start your own worker by calling: Web5280.Worker.start_link(arg1, arg2, arg3)
-      worker(Web5280.Blog, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

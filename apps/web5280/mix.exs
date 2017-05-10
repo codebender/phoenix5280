@@ -21,8 +21,8 @@ defmodule Web5280.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Web5280, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger,
-      :gettext, :calendar, :yamerl, :httpoison]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
+      :gettext, :calendar, :yamerl, :httpoison, :blog5280]]
   end
 
   # Specifies which paths to compile per environment.
@@ -43,6 +43,7 @@ defmodule Web5280.Mixfile do
      {:calendar, "~> 0.17"},
      {:yamerl, "~> 0.4.0"},
      {:httpoison, "~> 0.11.1"},
-     {:number, "~> 0.5.1"}]
+     {:number, "~> 0.5.1"},
+     {:blog5280, in_umbrella: true}]
   end
 end

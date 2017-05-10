@@ -1,10 +1,10 @@
-defmodule Web5280.BlogPost do
+defmodule Blog5280.BlogPost do
   defstruct slug: "", title: "", intro: "", created_at: "", content: ""
 
-  alias Web5280.Blog
+  alias Blog5280.Blog
 
   def compile(file) do
-    post = %Web5280.BlogPost{
+    post = %Blog5280.BlogPost{
       slug: file_to_slug(file)
     }
 
