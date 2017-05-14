@@ -1,6 +1,6 @@
-defmodule Web5280.Fitbit.Lifetime do
-  alias Web5280.Fitbit
-  alias Web5280.Fitbit.Utils
+defmodule Fitbit.Lifetime do
+  alias Fitbit.HttpClient
+  alias Fitbit.Utils
 
   defstruct [
     :best_steps, :best_steps_date, :best_distance, :best_distance_date,
@@ -15,8 +15,8 @@ defmodule Web5280.Fitbit.Lifetime do
     total_floors: binary
   }
 
-  def stats(user_token) do
-    case Fitbit.user_request(:get, "activities", user_token) do
+  def stats do
+    case HttpClient.user_request("activities") do
       {:ok, body} ->
         body |> parse_lifetime_stats
       error ->
@@ -25,7 +25,7 @@ defmodule Web5280.Fitbit.Lifetime do
   end
 
   defp parse_lifetime_stats(lifetime_stats) do
-    %Web5280.Fitbit.Lifetime{
+    %__MODULE__{
       best_steps: Utils.delimit(lifetime_stats["best"]["total"]["steps"]["value"], 0),
       best_steps_date: Utils.display_date(lifetime_stats["best"]["total"]["steps"]["date"]),
       best_distance: Utils.delimit(lifetime_stats["best"]["total"]["distance"]["value"], 2),

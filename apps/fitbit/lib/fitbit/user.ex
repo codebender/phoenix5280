@@ -1,6 +1,6 @@
-defmodule Web5280.Fitbit.User do
-  alias Web5280.Fitbit
-  alias Web5280.Fitbit.Utils
+defmodule Fitbit.User do
+  alias Fitbit.HttpClient
+  alias Fitbit.Utils
 
   defstruct [
     :about_me, :avatar, :avatar150, :city, :country, :date_of_birth,
@@ -22,8 +22,8 @@ defmodule Web5280.Fitbit.User do
     timezone: binary, water_unit: binary, weight: float, weight_unit: binary
   }
 
-  def profile(user_token) do
-    case Fitbit.user_request(:get, "profile", user_token) do
+  def profile do
+    case HttpClient.user_request("profile") do
       {:ok, body} ->
         body["user"] |> parse_user
       error ->
@@ -32,7 +32,7 @@ defmodule Web5280.Fitbit.User do
   end
 
   defp parse_user(user) do
-    %Web5280.Fitbit.User{
+    %__MODULE__{
       about_me: user["aboutMe"],
       avatar: user["avatar"],
       avatar150: user["avatar150"],
@@ -44,7 +44,7 @@ defmodule Web5280.Fitbit.User do
       encoded_id: user["encodedId"],
       foods_locale: user["foodsLocale"],
       full_name: user["fullName"],
-      gender: Utils.parse_gender(user["gender"]),
+      gender: user["gender"],
       glucose_unit: user["glucoseUnit"],
       height: user["height"],
       height_unit: user["heightUnit"],
@@ -52,7 +52,7 @@ defmodule Web5280.Fitbit.User do
       member_since: Utils.display_date(user["memberSince"]),
       nickname: user["nickname"],
       offset_from_utc_millis: user["offsetFromUTCMillis"],
-      start_day_of_week: Utils.parse_day(user["startDayOfWeek"]),
+      start_day_of_week: user["startDayOfWeek"],
       state: user["state"],
       stride_length_running: user["strideLengthRunning"],
       stride_length_walking: user["strideLengthWalking"],

@@ -1,4 +1,4 @@
-defmodule Web5280.Fitbit do
+defmodule Fitbit.HttpClient do
   @moduledoc """
   An HTTP client for Fitbit
   """
@@ -10,64 +10,30 @@ defmodule Web5280.Fitbit do
     * endpoint - part of the API we're hitting
   Returns string
   """
-  def process_url(endpoint) do
-    case endpoint do
-      "oauth2/token" ->
-        "https://api.fitbit.com/" <> endpoint
-      _ ->
-        "https://api.fitbit.com/" <> endpoint <> ".json"
-    end
-  end
+  def process_url(endpoint), do: "https://api.fitbit.com/" <> endpoint <> ".json"
 
-  def process_request_body(body) do
-    case body do
-      {:form, _form_data} ->
-        body
-      _ ->
-        Poison.encode! body
-    end
-  end
+  def process_request_body(body), do: Poison.encode! body
 
-  def process_response_body(body) do
-    Poison.decode! body
-  end
+  def process_response_body(body), do: Poison.decode! body
 
   @doc """
   Set our request headers for every request.
   """
-  def request_headers(auth_type, token) do
+  def request_headers(token) do
     headers = Map.new
 
-    headers = case auth_type do
-      :token ->
-        headers |> Map.put("Authorization", "Bearer #{token}")
-      :basic_auth ->
-        headers |> Map.put("Authorization", "Basic #{basic_auth()}")
-    end
-
     headers
+    |> Map.put("Authorization", "Bearer #{token}")
     |> Map.put("User-Agent",    "Fitbit/v1 fitbit-elixir/0.0.1")
     |> Map.put("Content-Type",  "application/x-www-form-urlencoded")
     |> Map.put("Accept-Language",  "en_US")
     |> Map.to_list
   end
 
-  def user_request(method, endpoint, token \\ "", body \\ "") do
+  def user_request(endpoint) do
     endpoint = "1/user/-/" <> endpoint
 
-    api_request(method, endpoint, body, :token, token)
-  end
-
-  def refresh_request(refresh_token) do
-    body = {
-      :form,
-      [
-        {:grant_type, "refresh_token"},
-        {:refresh_token, refresh_token}
-      ]
-    }
-
-    api_request(:post, "oauth2/token", body, :basic_auth)
+    api_request(:get, endpoint, token())
   end
 
   @doc """
@@ -75,13 +41,11 @@ defmodule Web5280.Fitbit do
   Args:
     * method - atom HTTP method
     * endpoint - string requested API endpoint
-    * body - request body
-    * auth_type - atom :token or :basic_auth
     * token - string user token
   Returns dict
   """
-  def api_request(method, endpoint, body, auth_type, token \\ "") do
-    headers = request_headers(auth_type, token)
+  def api_request(method, endpoint, token \\ "", body \\ "") do
+    headers = request_headers(token)
 
     case request(method, endpoint, body, headers) do
       {:ok, response} ->
@@ -122,9 +86,5 @@ defmodule Web5280.Fitbit do
   def token do
     Application.get_env(:web5280, :fitbit)[:token] ||
       System.get_env("FITBIT_TOKEN")
-  end
-
-  defp basic_auth do
-    Base.encode64("#{client_id()}:#{client_secret()}")
   end
 end

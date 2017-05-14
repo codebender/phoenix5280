@@ -1,12 +1,10 @@
 defmodule Web5280.FitbitController do
   use Web5280.Web, :controller
 
-  alias Web5280.Fitbit
-
   def show(conn, _params) do
-    user = Fitbit.User.profile(Fitbit.token)
-    badges = Fitbit.Badge.all_grouped(Fitbit.token)
-    lifetime = Fitbit.Lifetime.stats(Fitbit.token)
+    { :ok, user } = Fitbit.user_profile()
+    { :ok, badges } = Fitbit.user_badges()
+    { :ok, lifetime } = Fitbit.lifetime_stats()
 
     render(conn, "show.html", user: user, badges: badges, lifetime: lifetime)
   end

@@ -1,5 +1,5 @@
-defmodule Web5280.Fitbit.Badge do
-  alias Web5280.Fitbit
+defmodule Fitbit.Badge do
+  alias Fitbit.HttpClient
 
   defstruct [
     :category, :name, :date_earned, :image_url, :times_achieved,
@@ -11,8 +11,8 @@ defmodule Web5280.Fitbit.Badge do
     times_achieved: integer, description: binary, value: integer
   }
 
-  def all(user_token) do
-    case Fitbit.user_request(:get, "badges", user_token) do
+  def all do
+    case HttpClient.user_request("badges") do
       {:ok, body} ->
         body["badges"] |> parse_badges
       error ->
@@ -20,8 +20,8 @@ defmodule Web5280.Fitbit.Badge do
     end
   end
 
-  def all_grouped(user_token) do
-    all(user_token)
+  def all_grouped do
+    all()
     |> Enum.sort_by(fn x -> x.value end)
     |> Enum.group_by(fn x -> x.category end)
   end
@@ -29,13 +29,14 @@ defmodule Web5280.Fitbit.Badge do
 
   defp parse_badges(badges) do
     Enum.map(badges, fn(badge) ->
-      %Web5280.Fitbit.Badge{
+      %__MODULE__{
         category: badge["category"],
         name: badge["shortName"],
         image_url: badge["image125px"],
         times_achieved: badge["timesAchieved"],
         description: badge["description"],
-        value: badge["value"]
+        value: badge["value"],
+        date_earned: badge["dateTime"]
       }
     end)
   end
