@@ -1,14 +1,21 @@
 defmodule Blog5280.BlogPost do
-  defstruct slug: "", title: "", intro: "", created_at: "", content: ""
+  defstruct [
+    :slug, :title, :intro, :created_at, :content
+  ]
+
+  @type t :: %__MODULE__{
+    slug: binary, title: binary, intro: binary, created_at: binary,
+    content: binary
+  }
 
   alias Blog5280.Blog
 
   def compile(file) do
-    post = %Blog5280.BlogPost{
+    post = %__MODULE__{
       slug: file_to_slug(file)
     }
 
-    Path.join([Blog.blog_directory, file])
+    Path.join([Blog.blog_directory(), file])
     |> File.read!
     |> split
     |> extract(post)

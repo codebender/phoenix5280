@@ -11,7 +11,7 @@ defmodule Blog5280.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Starts a worker by calling: Blog5280.Worker.start_link(arg1, arg2, arg3)
-      worker(Blog5280.Blog, []),
+      worker(Blog5280, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
