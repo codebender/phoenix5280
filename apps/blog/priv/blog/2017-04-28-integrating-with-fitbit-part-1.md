@@ -8,7 +8,7 @@ intro: Integrating with Fitbit's API in Elixir. I've done it many times in ruby,
 
 
 
-#### TL;DR - [My Fitbit Stats Page](http://www.5280code.com/fitbit)
+#### TL;DR - [My Fitbit Stats Page](/fitbit)
 
 
 

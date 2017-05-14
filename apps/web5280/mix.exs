@@ -22,7 +22,7 @@ defmodule Web5280.Mixfile do
   def application do
     [mod: {Web5280, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-      :gettext, :calendar, :yamerl, :httpoison, :blog5280, :fitbit]]
+      :gettext, :calendar, :yamerl, :httpoison, :blog, :fitbit]]
   end
 
   # Specifies which paths to compile per environment.
@@ -42,7 +42,7 @@ defmodule Web5280.Mixfile do
      {:calendar, "~> 0.17"},
      {:httpoison, "~> 0.11.1"},
      {:number, "~> 0.5.1"},
-     {:blog5280, in_umbrella: true},
+     {:blog, in_umbrella: true},
      {:fitbit, in_umbrella: true}]
   end
 end

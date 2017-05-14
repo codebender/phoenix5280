@@ -1,8 +1,8 @@
-defmodule Blog5280.Mixfile do
+defmodule Blog.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :blog5280,
+    [app: :blog,
      version: "0.1.0",
      build_path: "../../_build",
      config_path: "../../config/config.exs",
@@ -20,7 +20,7 @@ defmodule Blog5280.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [extra_applications: [:logger],
-     mod: {Blog5280.Application, []}]
+     mod: {Blog.Application, []}]
   end
 
   # Dependencies can be Hex packages:

@@ -2,7 +2,7 @@ defmodule Web5280.BlogPostController do
   use Web5280.Web, :controller
 
   def show(conn, %{"slug" => slug}) do
-    case Blog5280.get_by_slug(slug) do
+    case Blog.get_by_slug(slug) do
       {:ok, post} -> render conn, "show.html", post: post
       :not_found -> not_found(conn)
     end

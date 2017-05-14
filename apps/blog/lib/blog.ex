@@ -1,7 +1,7 @@
-defmodule Blog5280 do
+defmodule Blog do
   use GenServer
 
-  alias Blog5280.Blog
+  alias Blog.BlogPost
 
   def start_link do
     GenServer.start_link(__MODULE__, :ok, [name: __MODULE__])
@@ -29,5 +29,22 @@ defmodule Blog5280 do
       nil -> {:reply, :not_found, posts}
       post -> {:reply, {:ok, post}, posts}
     end
+  end
+
+  @blog_directory "apps/blog/priv/blog"
+
+  def crawl do
+    blog_directory()
+    |> File.ls!
+    |> Enum.map(&BlogPost.compile/1)
+    |> Enum.sort(&sort/2)
+  end
+
+  def blog_directory do
+    @blog_directory
+  end
+
+  defp sort(a, b) do
+    Date.compare(a.created_at, b.created_at) == :gt
   end
 end

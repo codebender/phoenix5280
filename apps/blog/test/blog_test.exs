@@ -1,6 +1,6 @@
-defmodule Blog5280Test do
+defmodule BlogTest do
   use ExUnit.Case
-  doctest Blog5280
+  doctest Blog
 
   test "the truth" do
     assert 1 + 1 == 2

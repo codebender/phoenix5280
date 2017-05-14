@@ -1,4 +1,4 @@
-defmodule Blog5280.BlogPost do
+defmodule Blog.BlogPost do
   defstruct [
     :slug, :title, :intro, :created_at, :content
   ]
@@ -7,8 +7,6 @@ defmodule Blog5280.BlogPost do
     slug: binary, title: binary, intro: binary, created_at: binary,
     content: binary
   }
-
-  alias Blog5280.Blog
 
   def compile(file) do
     post = %__MODULE__{
