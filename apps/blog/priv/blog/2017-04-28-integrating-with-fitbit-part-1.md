@@ -175,7 +175,7 @@ defmodule Web5280.FitbitController do
 end
 ```
 
-The [template is can be viewed here](https://github.com/codebender/phoenix5280/blob/47f33b55ab5f2659ad586f15b9ca042afd58d222/web/templates/fitbit/show.html.eex)
+The [template can be viewed here](https://github.com/codebender/phoenix5280/blob/47f33b55ab5f2659ad586f15b9ca042afd58d222/web/templates/fitbit/show.html.eex)
 
 
 ## Conclusions
