@@ -22,7 +22,7 @@ defmodule Web5280.Mixfile do
   def application do
     [mod: {Web5280, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-      :gettext, :calendar, :yamerl, :httpoison, :blog, :fitbit]]
+      :gettext, :blog, :fitbit]]
   end
 
   # Specifies which paths to compile per environment.
