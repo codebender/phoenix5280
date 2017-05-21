@@ -39,9 +39,6 @@ defmodule Web5280.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.13"},
      {:cowboy, "~> 1.1"},
-     {:calendar, "~> 0.17"},
-     {:httpoison, "~> 0.11.1"},
-     {:number, "~> 0.5.1"},
      {:blog, in_umbrella: true},
      {:fitbit, in_umbrella: true}]
   end
