@@ -4,13 +4,9 @@ created_at: 2017-04-28
 intro: Integrating with Fitbit's API in Elixir. I've done it many times in ruby, node, and go. Time for a new language!
 ---
 
-![Fitbit](https://s2.q4cdn.com/857130097/files/doc_downloads/Alta/Product/Fitbit-Family.jpg){:height="450px" width="100%"}
-
-
+![fitbits](https://cloud.githubusercontent.com/assets/987305/26287475/76d5e702-3e39-11e7-8d89-7c1e95db3279.jpg){:width="100%"}
 
 #### TL;DR - [My Fitbit Stats Page](/fitbit)
-
-
 
 ## The MVP
 In the past, I've integrated with Fitbit using Ruby to show my daily stats like
