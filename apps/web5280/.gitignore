@@ -19,5 +19,8 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
-# ignore secrets
-apps/*/config/*.secret.exs
+# ignore /priv/static/
+/priv/static/
+
+# Static artifacts
+/node_modules
