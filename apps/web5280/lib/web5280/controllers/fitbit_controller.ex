@@ -1,5 +1,5 @@
 defmodule Web5280.FitbitController do
-  use Web5280.Web, :controller
+  use Web5280, :controller
 
   def show(conn, _params) do
     { :ok, user } = Fitbit.user_profile()

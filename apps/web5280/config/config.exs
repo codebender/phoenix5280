@@ -8,7 +8,7 @@ use Mix.Config
 # Configures the endpoint
 config :web5280, Web5280.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "izlUbzMcfgZ1DVBBNMtlqCJMrAb53g5WtDPT/rJQvwNl4YzM/7TLzFhBytMGhDvK",
+  secret_key_base: "Y2DSgLhjbWAdP+Xz1nHNGDSSNyw/eIiKiLtZuh0z4y+npQoEwRtmxjOHAq8lKTU7",
   render_errors: [view: Web5280.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Web5280.PubSub,
            adapter: Phoenix.PubSub.PG2]

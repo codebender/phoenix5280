@@ -1,5 +1,5 @@
 defmodule Web5280.BlogPostController do
-  use Web5280.Web, :controller
+  use Web5280, :controller
 
   def show(conn, %{"slug" => slug}) do
     case Blog.get_by_slug(slug) do

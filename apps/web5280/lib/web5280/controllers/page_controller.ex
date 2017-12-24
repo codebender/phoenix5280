@@ -1,5 +1,5 @@
 defmodule Web5280.PageController do
-  use Web5280.Web, :controller
+  use Web5280, :controller
 
   def index(conn, _params) do
     {:ok, blog_posts} = Blog.list()
