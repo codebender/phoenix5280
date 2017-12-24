@@ -1,5 +1,5 @@
 defmodule Web5280.ErrorView do
-  use Web5280.Web, :view
+  use Web5280, :view
 
   def render("404.html", _assigns) do
     "Page not found"

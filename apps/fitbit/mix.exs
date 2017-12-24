@@ -8,7 +8,7 @@ defmodule Fitbit.Mixfile do
      config_path: "../../config/config.exs",
      deps_path: "../../deps",
      lockfile: "../../mix.lock",
-     elixir: "~> 1.4",
+     elixir: "~> 1.5",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -38,7 +38,7 @@ defmodule Fitbit.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:calendar, "~> 0.17"},
-     {:httpoison, "~> 0.11.1"},
+     {:httpoison, "~> 0.13"},
      {:number, "~> 0.5.1"}]
   end
 end

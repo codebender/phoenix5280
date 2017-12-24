@@ -1,6 +1,8 @@
 defmodule Web5280.Endpoint do
   use Phoenix.Endpoint, otp_app: :web5280
 
+  socket "/socket", Web5280.UserSocket
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
@@ -34,7 +36,22 @@ defmodule Web5280.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_web5280_key",
-    signing_salt: "oUvhnUqA"
+    signing_salt: "Q4Ki6JQW"
 
   plug Web5280.Router
+
+  @doc """
+  Callback invoked for dynamically configuring the endpoint.
+
+  It receives the endpoint configuration and checks if
+  configuration should be loaded from the system environment.
+  """
+  def init(_key, config) do
+    if config[:load_from_system_env] do
+      port = System.get_env("PORT") || raise "expected the PORT environment variable to be set"
+      {:ok, Keyword.put(config, :http, [:inet6, port: port])}
+    else
+      {:ok, config}
+    end
+  end
 end
